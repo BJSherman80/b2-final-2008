@@ -3,10 +3,11 @@
 <h1> <p>University of Study:</p><%=@doctor.university%> </h1>
 <h1> <p>Hospital:</p><%=@doctor.hospital.name%> </h1>
 <h1>Patients</h1>
-<ul>
+<ol>
   <% @doctor.patients.each do |patient| %>
-  <li>
+  <li id= 'patient-<%=patient.id%>'>
     <%=  patient.name  %>
+    <%= button_to "Delete Appointment", "/doctors/#{@doctor.id}/patients/#{patient.id}", method: :delete %>
   </li>
   <% end %>
-</ul>
+</ol>

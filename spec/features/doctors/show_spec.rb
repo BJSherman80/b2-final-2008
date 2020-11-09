@@ -11,7 +11,7 @@ RSpec.describe 'Doctors show page', type: :feature do
     doctor_1.patients << patient_2
 
     visit "/doctors/#{doctor_1.id}"
-    save_and_open_page
+    
     expect(page).to have_content(doctor_1.name)
     expect(page).to have_content(doctor_1.specialty)
     expect(page).to have_content(doctor_1.university)
